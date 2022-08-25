@@ -14,7 +14,7 @@
 // --------------------1) Create a function that takes in a number (greater than 2) and returns an array that length containing the numbers of the Fibonacci sequence.
 
 // PSUEDOCODE:
-// Create a function that takes in a number and returns an array of fibonacci sequence numbers equal to that number
+// Create a function that takes in a number and returns an array of fibonacci sequence numbers equal to that number; create a loop whose length is equal to the input, that starts on the second index and 
 // Inputs are the variables fibLength1 = 6, fibLength2 = 10 as provided below.
 // Fibonacci sequence is 1+1=2, 2+3=5, 5+8=13, 8+13=21, 13+21=34, 21+34=55
 // Outputs are [1, 1, 2, 3, 5, 8], [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
@@ -55,7 +55,16 @@ const fibLength1 = 6
 
 const fibLength2 = 10
 // Expected output: [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
-const fibonacci = n => { if (n <= 1) { return n; } return fibonacci(n - 1) + fibonacci(n - 2); }
+
+const fibonacci = (number) => {
+  let fibArr = [0, 1];
+  for (let i = 2; i <= number; i++){
+    fibArr.push(fibArr[i - 2] + fibArr[i - 1])
+  }
+  return fibArr.slice(1)
+}
+
+// I feel like I understand this function now, and the test, but it won't pass in the terminal!
 
 // b) Create the function that makes the test pass.
 
